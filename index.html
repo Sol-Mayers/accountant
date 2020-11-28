@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Schetovod</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+
+  </header>
+  <main>
+    <div class="my-wallet-wrap">
+    <div class="name-save">
+      <div class="name-title">Счетовод</div>
+      <div class="two-buttons-wrap">
+      <button type="button" class="notebook">
+        <svg class="notebook-icon" id="_01-agenda" data-name="01-agenda" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{stroke-linejoin:round;stroke-width:2px}</style></defs><title>01-agenda</title><path class="cls-1" d="M4 5V1h7H31V31H11 4V27"/><path class="cls-1" d="M4 5H5A2 2 0 0 1 7 7 2 2 0 0 1 5 9H3A2 2 0 0 1 1 7a2 2 0 0 1 .59-1.41A2 2 0 0 1 3 5z"/><path class="cls-1" d="M4 14H5a2 2 0 0 1 2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2 2 2 0 0 1 .59-1.41A2 2 0 0 1 3 14z"/><path class="cls-1" d="M4 23H5a2 2 0 0 1 2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2 2 2 0 0 1 .59-1.41A2 2 0 0 1 3 23z"/><path class="cls-1" d="M11 1V31z"/><path class="cls-1" d="M4 9v5z"/><path class="cls-1" d="M4 18v5z"/><path class="cls-1" d="M14 23H28z"/><path class="cls-1" d="M14 27H28z"/></svg>
+      </button>
+      <button type="button" class="save-button">
+      Сохранить результат
+      </button>
+      <img class="added-icon" width="30" height="30" src="img/checkmarksquare_111077.svg">
+      <div class="memory-alert">
+          Память заполнена.
+          <br>Удалите данные!
+        </div>
+      </div>
+    </div>
+  <form action="#" method="post" class="form-wallet">
+    <label class="income-wrap">
+      <span class="income">Доход в месяц</span>
+      <input id="must-write" type="text" name="income" placeholder="Введите сумму" class="income-field" required>
+    </label>
+    <label class="expense-wrap">
+      <span class="expense">Расход в месяц</span>
+      <input id="must-write" type="text" name="expense" placeholder="Введите сумму" class="expense-field" required>
+    </label>
+    <label class="wishful-amount-wrap">
+      <span class="wishful-amount">Желаемая сумма</span>
+      <input id="must-write" type="text" name="amount" placeholder="Введите сумму" class="wishful-amount-field" required>
+    </label>
+    <div class="buttons-wrap">
+    <button type="button" class="calculation-button">Посчитать</button>
+    <button type="reset" class="reset-button">Очистить</button>
+    </div>
+  </form>
+  <div class="how-long">
+    <h2 class="how-long-title">Уйдёт времени -</h2>
+    <p class="how-long-answer"></p>
+  </div>
+</div>
+ <div class="gray-wall"></div>
+  </main>
+  <footer>
+
+  </footer>
+  <template id="white">
+    <tr class="white-row">
+      <td class="text-table-notebook"></td>
+      <td class="text-table-notebook"></td>
+      <td class="text-table-notebook"></td>
+      <td class="text-table-notebook"></td>
+      <td class="table-button-del">
+        <button type="button" class="button-delete-note">
+        </button>
+      </td>
+    </tr>
+    </template>
+  <div class="notebook-popup">
+   <button type="button" class="exit-button">
+     <svg class="exit-icon" width="36" height="36" viewBox="2 2 28 28" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}</style></defs><title/><g id="cross"><path class="cls-1" d="M7 7 25 25z"/><path class="cls-1" d="M7 25 25 7z"/></g></svg>
+   </button>
+    <h2 class="notebook-title">Журнал</h2>
+    <table id="mainTable" class="notebook-table">
+  <tbody class="fieldOfRows">
+    <tr>
+      <th class="title-table-notebook green-border">
+      <button type="button" class="income-sort">Доход
+      <img src="img/sort_icon_143693.svg" width="12" height="12" alt="sort-icon" class="icon-sort">
+      </button>
+      </th>
+      <th class="title-table-notebook green-border">
+        <button type="button" class="expense-sort">Расход
+        <img src="img/sort_icon_143693.svg" width="12" height="12" alt="sort-icon" class="icon-sort">
+        </button>
+      </th>
+      <th class="title-table-notebook green-border">
+        <button type="button" class="amount-sort">Сумма
+        <img src="img/sort_icon_143693.svg" width="12" height="12" alt="sort-icon" class="icon-sort">
+        </button>
+      </th>
+      <th class="title-table-notebook green-border">Время</th>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+  <script src="js/notebook.js"></script>
+  <script src="js/calc.js"></script>
+</body>
+
+</html>
+
+
+
