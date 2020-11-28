@@ -2,10 +2,12 @@ h2 {
   margin: 0px;
   padding: 0px;
 }
+
 p {
   margin: 0px;
   padding: 0px;
 }
+
 .my-wallet-wrap {
   display: flex;
   flex-direction: column;
@@ -17,7 +19,7 @@ p {
   background-color: #800080;
   box-sizing: border-box;
   padding: 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #ffffff;
   font-size: 20px;
   border-radius: 6px;
@@ -27,12 +29,14 @@ p {
   top: 50%;
   transform: translate(-50%,-50%);
 }
+
 .form-wallet {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
 .income-wrap,
 .expense-wrap,
 .wishful-amount-wrap {
@@ -43,11 +47,13 @@ p {
   width: 100%;
   margin-bottom: 20px;
 }
+
 .income,
 .expense,
 .wishful-amount {
   margin-bottom: 5px;
 }
+
 .calculation-button {
   display: flex;
   flex-direction: row;
@@ -64,20 +70,21 @@ p {
   color: #800080;
   background-color: #ffffff;
   border: none;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 6px;
   cursor: pointer;
   outline: none;
   box-shadow: 0px 0px 8px black;
   transition-duration: 0.1s;
 }
+
 .calculation-button:hover {
   background-color: #ececec;
 }
+
 .calculation-button:active {
   background-color: #d4d4d4;
 }
+
 .save-button {
   display: flex;
   flex-direction: row;
@@ -99,6 +106,7 @@ p {
   box-shadow: 0px 0px 8px black;
   transition-duration: 0.1s;
 }
+
 .notebook {
   display: flex;
   flex-direction: row;
@@ -116,11 +124,13 @@ p {
   border: none;
   z-index: 2;
 }
+
 .disabled-button {
   opacity: 0.5;
   cursor: default;
   pointer-events: none;
 }
+
 .reset-button {
   display: flex;
   flex-direction: row;
@@ -137,29 +147,34 @@ p {
   color: #ffffff;
   background-color: #800080;
   border: 2px solid #ffffff;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 6px;
   cursor: pointer;
   outline: none;
   box-shadow: 0px 0px 8px black;
   transition-duration: 0.1s;
 }
+
 .reset-button:hover {
   background-color: #720072;
 }
+
 .reset-button:active {
   background-color: #640064;
 }
+
 .buttons-wrap {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  align-self: center;
   align-content: center;
   flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 480px;
   margin-bottom: 30px;
 }
+
 .how-long {
   display: flex;
   flex-direction: row;
@@ -170,9 +185,11 @@ p {
   width: 100%;
   margin-bottom: 10px;
 }
+
 .how-long-title {
   font-size: 22px;
 }
+
 .how-long-answer {
   display: flex;
   flex-direction: row;
@@ -185,6 +202,7 @@ p {
   color: #ffffff;
   font-size: 22px;
 }
+
 .income-field,
 .expense-field,
 .wishful-amount-field {
@@ -193,6 +211,7 @@ p {
   outline: none;
   padding-left: 6px;
 }
+
 .name-save {
   display: flex;
   flex-direction: row;
@@ -202,28 +221,36 @@ p {
   flex-wrap: wrap;
   margin-bottom: 30px;
 }
+
 .name-title {
   font-size: 32px;
   font-weight: bold;
 }
+
 .save-button:hover {
   color: #800080;
   background-color: #ffffff;
 }
+
 .save-button:active {
   color: #800080;
   background-color: #d4d4d4;
 }
+
 .notebook-icon {
   stroke: #ffffff;
   fill: #800080;
   position: absolute;
+  top: 0px;
+  left: 0px;
   transition-duration: 0.1s;
 }
+
 .notebook-icon:hover {
   stroke: #800080;
   fill: #bfef62;
 }
+
 .two-buttons-wrap {
   display: flex;
   flex-direction: row;
@@ -257,6 +284,7 @@ p {
   padding: 20px;
   opacity: 0;
 }
+
 .notebook-title {
   margin-bottom: 0px;
   font-style: normal;
@@ -266,6 +294,7 @@ p {
   position: relative;
   margin-bottom: 10px;
 }
+
 .button-delete-note {
   display: flex;
   flex-direction: row;
@@ -288,6 +317,7 @@ p {
   background-repeat: no-repeat;
   transition-duration: 0.1s;
 }
+
 .exit-button {
   display: flex;
   flex-direction: row;
@@ -306,14 +336,19 @@ p {
   border: none;
   transition-duration: 0.1s;
 }
+
 .exit-icon {
   position: absolute;
+  top: 0px;
+  left: 0px;
   stroke: #800080;
   transition-duration: 0.1s;
 }
+
 .exit-icon:hover {
   stroke: #ba00ba;
 }
+
 .notebook-table {
   width: 100%;
   border-collapse: collapse;
@@ -322,6 +357,7 @@ p {
   height: auto;
   margin-bottom: 10px;
 }
+
 .text-table-notebook,
 .title-table-notebook {
   padding: 3px;
@@ -346,26 +382,32 @@ p {
   position: absolute;
   fill: #ff7f7f;
 }
+
 .delete-icon:hover {
   fill: #fb0d0d;
 }
+
 .white-row {
   background-color: #ffffff;
   border-bottom: 1px solid #dcdcdc;
   transition-duration: 0.1s;
 }
+
 .white-row:hover {
   background-color: #c2faff;
 }
+
 .table-button-del {
   width: 30px;
   height: 30px;
   background-color: #ffffff;
   border: none;
 }
+
 .table-button-del:hover {
   background-color: #ffc075;
 }
+
 .added-icon {
   position: absolute;
   width: 30px;
@@ -375,28 +417,34 @@ p {
   z-index: 1;
   opacity: 0;
 }
+
 .shift-icon {
   animation-name: moove-left;
   animation-duration: 1.5s;
 }
+
 @keyframes moove-left {
   0% {
     transform: translateX(0px);
     opacity: 0;
   }
+
   30% {
     transform: translateX(-36px);
     opacity: 1;
   }
+
   70% {
     transform: translateX(-36px);
     opacity: 1;
   }
+
   100% {
     transform: translateX(0px);
     opacity: 0;
   }
 }
+
 .memory-alert {
   display: flex;
   flex-direction: row;
@@ -417,16 +465,20 @@ p {
   transition-property: all;
   font-size: 16px;
 }
+
 .show-alert {
   opacity: 1;
   transform: translateY(44px);
 }
+
 input {
   transition-duration: 0.1s;
 }
+
 input:focus {
   box-shadow: 0px 0px 0px 1px #bfef62;
 }
+
 .income-sort,
 .expense-sort,
 .amount-sort {
@@ -443,14 +495,17 @@ input:focus {
   outline: none;
   cursor: pointer;
 }
+
 .income-sort:hover,
 .expense-sort:hover,
 .amount-sort:hover {
   box-shadow: 0px 0px 2px 1px #515151;
 }
+
 .icon-sort {
   margin-left: 4px;
 }
+
 .gray-wall {
   width: 100%;
   height: 100%;
@@ -464,52 +519,63 @@ input:focus {
   animation-fill-mode: forwards;
   z-index: 0;
 }
+
 .add-anim {
   animation-name: show-wall;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   z-index: 2;
 }
+
 @keyframes show-wall {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 0.5;
   }
 }
+
 @keyframes hide-wall {
   0% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 0;
   }
 }
+
 .show-popup-anim {
   animation-name: show-popup;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
+
 .hide-popup-anim {
   animation-name: hide-popup;
   animation-fill-mode: forwards;
 }
+
 @keyframes show-popup {
   0% {
     opacity: 0;
     z-index: 0;
   }
+
   100% {
     opacity: 1;
     z-index: 3;
   }
 }
+
 @keyframes hide-popup {
   0% {
     opacity: 1;
     z-index: 3;
   }
+
   100% {
     opacity: 0;
     z-index: 0;
