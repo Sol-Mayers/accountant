@@ -9,7 +9,11 @@
   let mainTable = document.querySelector('.notebook-table');
   let deleteButton = document.querySelector('.button-delete-note');
   let incomeSort = document.querySelector('.income-sort');
+  let expenseSort = document.querySelector('.expense-sort');
+  let amountSort = document.querySelector('.amount-sort');
   let wall = document.querySelector('.gray-wall');
+  let textTable = document.querySelector('.text-table-notebook');
+
   openNotebook.addEventListener('click', function(event) {
     notebook.classList.add('show-popup-anim');
     notebook.classList.remove('hide-popup-anim');
@@ -60,6 +64,7 @@
     makeTable();
     window.calc.getSaveDisable();
   });
+
   fieldOfRows.addEventListener('click', function(event) {
     if(event.target.closest('.button-delete-note')) {
       event.target.closest('tr').remove();
@@ -73,7 +78,32 @@
     if(mainTable.rows.length === 8) {
       window.calc.getSaveEnable();
     }
-  })
+  });
+
+  incomeSort.addEventListener('click', function() {
+    let sortedRows = Array.from(mainTable.rows)
+          .slice(1)
+          .sort((rowA, rowB) => parseInt(rowA.cells[0].innerHTML.replace(/\s/g, '')) > parseInt(rowB.cells[0].innerHTML.replace(/\s/g, '')) ? 1 : -1);
+
+    mainTable.tBodies[0].append(...sortedRows);
+  });
+
+  expenseSort.addEventListener('click', function() {
+    let sortedRows = Array.from(mainTable.rows)
+          .slice(1)
+          .sort((rowA, rowB) => parseInt(rowA.cells[1].innerHTML.replace(/\s/g, '')) > parseInt(rowB.cells[1].innerHTML.replace(/\s/g, '')) ? 1 : -1);
+
+    mainTable.tBodies[0].append(...sortedRows);
+  });
+
+  amountSort.addEventListener('click', function() {
+    let sortedRows = Array.from(mainTable.rows)
+          .slice(1)
+          .sort((rowA, rowB) => parseInt(rowA.cells[2].innerHTML.replace(/\s/g, '')) > parseInt(rowB.cells[2].innerHTML.replace(/\s/g, '')) ? 1 : -1);
+
+    mainTable.tBodies[0].append(...sortedRows);
+  });
+
   window.notebook = {
     saveResult: saveResult,
     openNotebook: openNotebook,
