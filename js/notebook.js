@@ -40,6 +40,7 @@
       newRow.classList.add('white-row');
       let tdOne = document.createElement('td');
       tdOne.classList.add('text-table-notebook');
+      tdOne.classList.add('date-cast');
       let tdTwo = document.createElement('td');
       tdTwo.classList.add('text-table-notebook');
       let tdThree = document.createElement('td');
@@ -47,19 +48,54 @@
       let tdFour = document.createElement('td');
       tdFour.classList.add('text-table-notebook');
       let tdFive = document.createElement('td');
-      tdFive.classList.add('table-button-del');
+      tdFour.classList.add('text-table-notebook');
+      let tdSix = document.createElement('td');
+      tdSix.classList.add('table-button-del');
       let makeDeleteButton = document.createElement('button');
       makeDeleteButton.classList.add('button-delete-note');
-      tdFive.appendChild(makeDeleteButton);
+      tdSix.appendChild(makeDeleteButton);
+
       newRow.appendChild(tdOne);
       newRow.appendChild(tdTwo);
       newRow.appendChild(tdThree);
       newRow.appendChild(tdFour);
       newRow.appendChild(tdFive);
-      tdOne.innerHTML = window.calc.income.value;
-      tdTwo.innerHTML = window.calc.expense.value;
-      tdThree.innerHTML = window.calc.amount.value;
-      tdFour.innerHTML = window.calc.result.textContent;
+      newRow.appendChild(tdSix);
+
+      let data = new Date();
+      let year = data.getFullYear();
+      let month = data.getMonth();
+      let day = data.getDate();
+
+      tdOne.innerHTML = (day + '.' + (month + Number(1)) + '.' + year);
+      tdTwo.innerHTML = window.calc.income.value;
+      tdThree.innerHTML = window.calc.expense.value;
+      tdFour.innerHTML = window.calc.amount.value;
+      tdFive.innerHTML = window.calc.result.textContent;
+
+      let oneVal = tdOne.innerHTML;
+      let twoVal = tdTwo.innerHTML;
+      let threeVal = tdThree.innerHTML;
+      let fourVal = tdFour.innerHTML;
+      let fiveVal = tdFive.innerHTML;
+
+      let allRows = [];
+
+      if (localStorage.getItem('addedrow'))
+        allRows = JSON.parse(localStorage.getItem('addedrow'));
+
+      let addRow = {
+        one: oneVal,
+        two: twoVal,
+        three: threeVal,
+        four: fourVal,
+        five: fiveVal,
+      }
+
+      allRows.push(addRow);
+
+      localStorage.setItem('addedrow', JSON.stringify(allRows));
+
     }
     makeTable();
     window.calc.getSaveDisable();
@@ -68,6 +104,7 @@
   fieldOfRows.addEventListener('click', function(event) {
     if(event.target.closest('.button-delete-note')) {
       event.target.closest('tr').remove();
+      localStorage.removeItem('addedrow');
     }
     if(mainTable.rows.length === 1) {
       notebook.classList.remove('show-popup-anim');
@@ -83,7 +120,7 @@
   incomeSort.addEventListener('click', function() {
     let sortedRows = Array.from(mainTable.rows)
           .slice(1)
-          .sort((rowA, rowB) => parseInt(rowA.cells[0].innerHTML.replace(/\s/g, '')) > parseInt(rowB.cells[0].innerHTML.replace(/\s/g, '')) ? 1 : -1);
+          .sort((rowA, rowB) => parseInt(rowA.cells[1].innerHTML.replace(/\s/g, '')) > parseInt(rowB.cells[1].innerHTML.replace(/\s/g, '')) ? 1 : -1);
 
     mainTable.tBodies[0].append(...sortedRows);
   });
@@ -91,7 +128,7 @@
   expenseSort.addEventListener('click', function() {
     let sortedRows = Array.from(mainTable.rows)
           .slice(1)
-          .sort((rowA, rowB) => parseInt(rowA.cells[1].innerHTML.replace(/\s/g, '')) > parseInt(rowB.cells[1].innerHTML.replace(/\s/g, '')) ? 1 : -1);
+          .sort((rowA, rowB) => parseInt(rowA.cells[2].innerHTML.replace(/\s/g, '')) > parseInt(rowB.cells[2].innerHTML.replace(/\s/g, '')) ? 1 : -1);
 
     mainTable.tBodies[0].append(...sortedRows);
   });
@@ -99,7 +136,7 @@
   amountSort.addEventListener('click', function() {
     let sortedRows = Array.from(mainTable.rows)
           .slice(1)
-          .sort((rowA, rowB) => parseInt(rowA.cells[2].innerHTML.replace(/\s/g, '')) > parseInt(rowB.cells[2].innerHTML.replace(/\s/g, '')) ? 1 : -1);
+          .sort((rowA, rowB) => parseInt(rowA.cells[3].innerHTML.replace(/\s/g, '')) > parseInt(rowB.cells[3].innerHTML.replace(/\s/g, '')) ? 1 : -1);
 
     mainTable.tBodies[0].append(...sortedRows);
   });
@@ -108,5 +145,7 @@
     saveResult: saveResult,
     openNotebook: openNotebook,
     mainTable: mainTable,
+    fieldOfRows: fieldOfRows,
+
   }
 })();
