@@ -33,49 +33,20 @@
   }
   getNoteDisable();
 
-  /*if (localStorage.getItem('addedrow') === null) {
+  if (localStorage.getItem('addedrow') === null) {
     getNoteDisable();
   } else {
     getNoteEnable();
-    let makeFoundationTable = function() {
-      let newRow = document.createElement('tr');
-      window.notebook.fieldOfRows.appendChild(newRow);
-      newRow.classList.add('white-row');
-      let tdOne = document.createElement('td');
-      tdOne.classList.add('text-table-notebook');
-      tdOne.classList.add('date-cast');
-      let tdTwo = document.createElement('td');
-      tdTwo.classList.add('text-table-notebook');
-      let tdThree = document.createElement('td');
-      tdThree.classList.add('text-table-notebook');
-      let tdFour = document.createElement('td');
-      tdFour.classList.add('text-table-notebook');
-      let tdFive = document.createElement('td');
-      tdFour.classList.add('text-table-notebook');
-      let tdSix = document.createElement('td');
-      tdSix.classList.add('table-button-del');
-      let makeDeleteButton = document.createElement('button');
-      makeDeleteButton.classList.add('button-delete-note');
-      tdSix.appendChild(makeDeleteButton);
-
-      newRow.appendChild(tdOne);
-      newRow.appendChild(tdTwo);
-      newRow.appendChild(tdThree);
-      newRow.appendChild(tdFour);
-      newRow.appendChild(tdFive);
-      newRow.appendChild(tdSix);
-
-      tdOne.innerHTML = JSON.parse(localStorage.getItem('addedrow'));
-      tdTwo.innerHTML = JSON.parse(localStorage.getItem('addedrow'));
-      tdThree.innerHTML = JSON.parse(localStorage.getItem('addedrow'));
-      tdFour.innerHTML = JSON.parse(localStorage.getItem('addedrow'));
-      tdFive.innerHTML = JSON.parse(localStorage.getItem('addedrow'));
-
-
-
-    }
-    makeFoundationTable();
-  }*/
+    JSON.parse(localStorage.getItem('addedrow')).forEach((item) => {
+      window.journal.addRow({
+        datetime: item.one,
+        income: item.two,
+        expense: item.three,
+        amount: item.four,
+        result: item.five,
+      })
+    });
+  }
 
   let getEnable = function() {
     buttonCalc.disabled = false;
